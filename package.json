@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "chai": "^3.5.0",
+    "fs-extra": "^8.0.1",
     "mocha": "^3.2.0",
     "pify": "^3.0.0",
     "uglifyjs-webpack-plugin": "^1.1.8",
@@ -15,7 +16,8 @@
   "scripts": {
     "build-array": "webpack --config webpack.config.array.js",
     "build-multiple-entries": "webpack --config webpack.config.multiple-entries.js",
-    "build": "yarn run build-array && yarn run build-multiple-entries",
+    "rewrite-webpack-source-code": "node rewrite-webpack-source-code.js",
+    "build": "yarn run rewrite-webpack-source-code && yarn run build-array && yarn run build-multiple-entries",
     "test": "mocha"
   }
 }
